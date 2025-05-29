@@ -9,9 +9,9 @@
     <div class="login-container">
         <h2><i class="fas fa-sign-in-alt"></i> Acceder al Cajero</h2>
         
-        <form th:action="@{/cajero/login}" method="post">
-            <label for="numeroCuenta"><i class="fas fa-credit-card"></i> Número de Cuenta:</label>
-            <input type="text" id="numeroCuenta" name="numeroCuenta" required>
+        <form th:action="@{/atm/login}" method="post">
+            <label for="accountNumber"><i class="fas fa-credit-card"></i> Número de Cuenta:</label>
+            <input type="text" id="accountNumber" name="accountNumber" required>
             
             <label for="pin"><i class="fas fa-lock"></i> PIN:</label>
             <input type="password" id="pin" name="pin" required>

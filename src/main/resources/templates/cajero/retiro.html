@@ -9,31 +9,31 @@
     <div class="container">
         <h2><i class="fas fa-money-bill-wave"></i> Realizar Retiro</h2>
         
-        <div th:if="${mensaje}" class="mensaje-exito" th:text="${mensaje}"></div>
+        <div th:if="${message}" class="mensaje-exito" th:text="${message}"></div>
         <div th:if="${error}" class="mensaje-error" th:text="${error}"></div>
         
-        <form th:action="@{/cajero/retiro}" method="post">
+        <form th:action="@{/atm/withdraw}" method="post">
             <div class="form-group">
-                <label for="numeroCuenta"><i class="fas fa-credit-card"></i> Cuenta:</label>
-                <select name="numeroCuenta" id="numeroCuenta" required>
-                    <option th:each="cuenta : ${cuentas}" 
-                            th:value="${cuenta.numero}" 
-                            th:text="${cuenta.numero + ' - Saldo: $' + #numbers.formatDecimal(cuenta.saldo, 1, 2)}">
+                <label for="accountNumber"><i class="fas fa-credit-card"></i> Cuenta:</label>
+                <select name="accountNumber" id="accountNumber" required>
+                    <option th:each="account : ${accounts}" 
+                            th:value="${account.number}" 
+                            th:text="${account.number + ' - Saldo: $' + #numbers.formatDecimal(account.balance, 1, 2)}">
                     </option>
                 </select>
             </div>
             
             <div class="form-group">
-                <label for="monto"><i class="fas fa-coins"></i> Monto a retirar:</label>
-                <input type="number" name="monto" min="1" required>
+                <label for="amount"><i class="fas fa-coins"></i> Monto a retirar:</label>
+                <input type="number" name="amount" min="1" required>
             </div>
             
-            <input type="hidden" name="identificacion" th:value="${cuentas[0].cliente.identificacion}">
+            <input type="hidden" name="identification" th:value="${accounts[0].customer.identification}">
             
             <button type="submit">Retirar</button>
         </form>
         
-        <a th:href="@{/cajero/menu}" class="btn-secondary"><i class="fas fa-arrow-left"></i> Volver al menú</a>
+        <a th:href="@{/atm/menu}" class="btn-secondary"><i class="fas fa-arrow-left"></i> Volver al menú</a>
     </div>
 </body>
 </html>

@@ -10,19 +10,19 @@
         <h2><i class="fas fa-wallet"></i> Tus cuentas</h2>
         
         <ul class="cuenta-list">
-            <li th:each="cuenta : ${cuentas}">
+            <li th:each="account : ${accounts}">
                 <span>
                     <i class="fas fa-credit-card"></i> 
-                    <span th:text="${cuenta.numero}"></span> - 
-                    $<span th:text="${#numbers.formatDecimal(cuenta.saldo, 1, 2)}"></span>
+                    <span th:text="${account.number}"></span> - 
+                    $<span th:text="${#numbers.formatDecimal(account.balance, 1, 2)}"></span>
                 </span>
-                <a th:href="@{'/cajero/movimientos/' + ${cuenta.numero}}" class="btn-secondary">
+                <a th:href="@{'/atm/movents/' + ${account.number}}" class="btn-secondary">
                     <i class="fas fa-list"></i> Movimientos
                 </a>
             </li>
         </ul>
         
-        <a th:href="@{/cajero/menu}" class="btn-secondary"><i class="fas fa-arrow-left"></i> Volver al menú</a>
+        <a th:href="@{/atm/menu}" class="btn-secondary"><i class="fas fa-arrow-left"></i> Volver al menú</a>
     </div>
 </body>
 </html>

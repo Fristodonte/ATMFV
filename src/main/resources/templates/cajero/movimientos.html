@@ -18,18 +18,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="mov : ${movimientos}">
-                    <td th:text="${#temporals.format(mov.fecha, 'dd/MM/yyyy HH:mm')}">Fecha</td>
-                    <td th:text="${mov.tipo}">Tipo</td>
-                    <td th:text="${mov.tipo == 'DEBITO' ? '-' : ''} + ${#numbers.formatDecimal(mov.monto, 1, 2)}"
-                        th:style="${mov.tipo == 'DEBITO'} ? 'color: #ff6666' : 'color: #66ff66'">
+                <tr th:each="mov : ${movents}">
+                    <td th:text="${#temporals.format(mov.date, 'dd/MM/yyyy HH:mm')}">Fecha</td>
+                    <td th:text="${mov.type}">Tipo</td>
+                    <td th:text="${mov.type == 'DEBITO' ? '-' : ''} + ${#numbers.formatDecimal(mov.amount, 1, 2)}"
+                        th:style="${mov.type == 'DEBITO'} ? 'color: #ff6666' : 'color: #66ff66'">
                         Monto
                     </td>
                 </tr>
             </tbody>
         </table>
         
-        <a th:href="@{/cajero/menu}" class="btn-secondary"><i class="fas fa-arrow-left"></i> Volver al menú</a>
+        <a th:href="@{/atm/menu}" class="btn-secondary"><i class="fas fa-arrow-left"></i> Volver al menú</a>
     </div>
 </body>
 </html>

@@ -6,38 +6,29 @@
     <link rel="stylesheet" th:href="@{/styles/menu.css}">
 </head>
 <body>
-    <h2>Bienvenido, <span th:text="${cliente.nombre}">Cliente</span></h2>
+    <h2>Bienvenido, <span th:text="${customer.name}">Cliente</span></h2>
     
     <div class="menu-grid">
-        <a th:href="@{/cajero/menu}" class="menu-item">
+        <a th:href="@{/atm/menu}" class="menu-item">
             <i class="fas fa-university"></i> MI BANCO
         </a>
-        <a th:href="@{/cajero/retiro}" class="menu-item">
+        <a th:href="@{/atm/withdraw}" class="menu-item">
             <i class="fas fa-money-bill-wave"></i> RETIROS
         </a>
-        <a th:href="@{/cajero/transferir}" class="menu-item">
+        <a th:href="@{/atm/transfer}" class="menu-item">
             <i class="fas fa-exchange-alt"></i> TRANSFERENCIAS
         </a>
-        <a th:href="@{/cajero/consignar}" class="menu-item">
+        <a th:href="@{/atm/deposit}" class="menu-item">
             <i class="fas fa-hand-holding-usd"></i> CONSIGNARME
         </a>
-        <a th:href="@{/cajero/cambiar-clave}" class="menu-item">
+        <a th:href="@{/atm/changePin}" class="menu-item">
             <i class="fas fa-key"></i> CAMBIO DE CLAVE
         </a>
-        <a th:href="@{/cajero/consultas}" class="menu-item">
+        <a th:href="@{/atm/consult}" class="menu-item">
             <i class="fas fa-search-dollar"></i> CONSULTAS
         </a>
-        <!-- <a th:href="@{/cajero/menu}" class="menu-item">
-            <i class="fas fa-cog"></i> SETTING
-        </a>
-        <a th:href="@{/cajero/menu}" class="menu-item">
-            <i class="fas fa-file-invoice-dollar"></i> BILL PAYMENT
-        </a>
-        <a th:href="@{/cajero/menu}" class="menu-item">
-            <i class="fas fa-hand-holding-heart"></i> DONATION/OTHER
-        </a> -->
     </div>
     
-    <a th:href="@{/cajero/logout}" class="logout-btn">Cerrar sesión</a>
+    <a th:href="@{/atm/logout}" class="logout-btn">Cerrar sesión</a>
 </body>
 </html>
