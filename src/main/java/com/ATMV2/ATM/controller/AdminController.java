@@ -40,14 +40,14 @@ public class AdminController {
     public String createCustomer(@ModelAttribute Customer customer) {
         customerService.createCustomer(customer);
         return "redirect:/admin";
-        
+
     }
 
      @GetMapping("/create-account")
     public String showFormAccount(Model model) {
         model.addAttribute("account", new Customer());
         return "admin/create-account";
-        
+
     }
 
     @PostMapping("/create-account")
@@ -73,10 +73,10 @@ public class AdminController {
     }
 
 
-    
-    
-    
-    
+
+
+
+
 
 
 }

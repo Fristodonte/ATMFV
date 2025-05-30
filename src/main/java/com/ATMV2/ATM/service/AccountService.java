@@ -27,8 +27,8 @@ public class AccountService {
     return accountRepository.save(account);
 }
 
-    public Optional<Account> searchByNumber(String numeber) {
-        return accountRepository.findByNumber(numeber);
+    public Optional<Account> searchByNumber(String number) {
+        return accountRepository.findByNumber(number);
     }
 
     public double consultBalance(Account account) {

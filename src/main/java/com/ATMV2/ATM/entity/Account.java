@@ -28,5 +28,5 @@ public class Account {
     private Customer customer;
 
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Movent> movents;
+    private List<Movent> movent;
 }

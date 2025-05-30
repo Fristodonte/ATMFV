@@ -1,51 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create account</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" th:href="@{/styles/admin.css}">
 </head>
 <body>
-    <div class="admin-container">
-        <h2><i class="fas fa-credit-card">Create account</i></h2>
+<div class="admin-container">
+  <h2><i class="fas fa-credit-card"></i> Create Account</h2>
 
-        <form th:action="@{/admin/create-account}" method="post">
-            <div class="form-group">
-                <label><i class="fas fa-user-tie"></i> Identification: </label>
-                <input type="text" name="identification" required>
-            </div>
-
-            <div class="form-group">
-                <label><i class="fas fa-hastag"></i> Account number: </label>
-                <input type="text" name="number" required>
-            </div>
-
-            <div class="form-group">
-                <label><i class="fas fa-list=alt"></i> Type of account: </label>
-                <select name="typeAccount" required >
-                    <option value="AHORROS"> Saves</option>
-                    <option value="CORRIENTE"> Corrient</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>
-                    <i class="fas fa-coins"></i> Initial Balance:
-                </label>
-                <input type="number" name="balance" required>
-            </div>
-
-            <button type="submit" class="admin-btn">
-                <i class="fas fa-save"></i> Create account
-            </button>
-        </form>
-
-        <div th:if="${message}" th:text="${message}" th:class="${error} ? 'message error':'message success' " ></div>
-
-        <a th:href="@{/admin}" class="back-btn"></a>
-        <i class="fas fa-arrow-left"> Volver </i>
+  <form th:action="@{/admin/create-account}" method="post">
+    <div class="form-group">
+      <label><i class="fas fa-id-card"></i> Customer Identification:</label>
+      <input type="text" name="identification" required>
     </div>
-    
+
+    <div class="form-group">
+      <label><i class="fas fa-hashtag"></i> Account Number:</label>
+      <input type="text" name="number" required>
+    </div>
+
+    <div class="form-group">
+      <label><i class="fas fa-list"></i> Account Type:</label>
+      <select name="typeAccount" required>
+        <option value="SAVINGS">Savings</option>
+        <option value="CHECKING">Checking</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label><i class="fas fa-dollar-sign"></i> Initial Balance:</label>
+      <input type="number" name="balance" step="0.01" min="0" required>
+    </div>
+
+    <button type="submit" class="admin-btn">
+      <i class="fas fa-plus-circle"></i> Create Account
+    </button>
+  </form>
+
+  <div th:if="${message}"
+       th:text="${message}"
+       th:class="${error} ? 'message error' : 'message success'">
+  </div>
+
+  <a th:href="@{/admin}" class="back-btn">
+    <i class="fas fa-arrow-left"></i> Go back
+  </a>
+</div>
 </body>
 </html>

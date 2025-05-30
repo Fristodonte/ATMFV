@@ -30,7 +30,7 @@ public class Customer {
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Account> accounts;
 
-    // Métodos para intentos
+
     public void incrementFailedAttempts() {
         this.failedAttempts++;
     }
